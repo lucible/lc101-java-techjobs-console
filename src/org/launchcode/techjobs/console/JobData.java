@@ -66,11 +66,11 @@ public class JobData {
             // for each field in an individual job.. 
             for (String field : record.keySet()) {
                 // get the value associated with that field.
-                String value = record.get(field);
+                String value = record.get(field).toLowerCase();
 
                 // if the search term is in the field's value
                 // add it to the returned arraylist.
-                if (value.contains(input)) {
+                if (value.contains(input.toLowerCase())) {
                     jobs.add(record);
                 }
             }
@@ -107,9 +107,9 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column);
+            String aValue = row.get(column).toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (aValue.contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
